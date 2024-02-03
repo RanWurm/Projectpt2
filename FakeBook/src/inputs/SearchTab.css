@@ -1,0 +1,11 @@
+
+.search_icon{
+	width: 120px;
+	height: 53px;
+	margin-left: 10px;
+	padding-right: 10px;
+	background-color: #e4e4e4;
+	cursor: pointer; /* Cursor on hover */
+
+}
+

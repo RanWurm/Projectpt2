@@ -1,0 +1,53 @@
+* {
+	margin:0px;
+	padding:0px;
+}
+
+.FeedPage{
+	text-align: center;
+	padding-top: 60px;
+}
+
+.navbar{
+	display: flex;
+	width: 100vw;
+	height: 60px;
+	background-color: #e4e4e4;
+	color:white;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.left_col{
+	flex:0.5;
+	display:flex;
+	flex-direction: row;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+.right_col{
+	flex:0.5;
+	display:flex;
+	flex-direction: row;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+.center_col{
+	flex:0.5;
+	display:flex;
+	flex-direction: row;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-center;
+}
+
+
+.search_icon{
+	width: 40px;
+	height: 40px;
+
+	margin-left: 10px;
+}

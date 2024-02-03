@@ -1,0 +1,76 @@
+.post {
+	border: 1px solid #ccc;
+	margin: 20px auto; /* Center the post horizontally */
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 350px; /* Limit the width of the post */
+	background-color: #fff; /* Set a background color */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  .post-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+  }
+  
+  .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 20%;
+	margin-right: 10px;
+  }
+  
+  .author-name {
+	font-weight: bold;
+  }
+  
+  .post-time {
+	color: #888;
+  }
+  
+.post-content {
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  max-width: 350px; /* Limit the width of the post */
+
+  padding: 10px;
+  text-align: center;
+}
+  
+  .post-interactions {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+  }
+  
+  .like-icon,
+  .comment-icon {
+	margin-right: 5px;
+  }
+  
+  .post-comments {
+	padding-left: 50px;
+  }
+  
+  .comment {
+	display: flex;
+	margin-bottom: 5px;
+  }
+  
+  .comment-avatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin-right: 5px;
+  }
+  
+  .comment-author {
+	font-weight: bold;
+	margin-right: 5px;
+  }
+  
+  .comment-text {
+	color: #333;
+  }
+  
