@@ -1,0 +1,24 @@
+
+
+.interaction-button {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px 8px;
+    transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.send_button{
+
+    height: 15px;
+    width: 30px;
+
+}

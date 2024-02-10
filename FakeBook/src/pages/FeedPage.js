@@ -1,13 +1,11 @@
-import './FeedPage.css'
-import Button from "../buttons/Button"
-import fbLogo from './facebookLogo3.png'
-import redButton from './redButton.png'
-import SearchTab from '../inputs/SearchTab'
+import "../css/pagesCss/FeedPage.css"
+import fbLogo from '../res/facebookLogo3.png'
+import NavBar from "../Bars/NavBar"
 import Post from '../inputs/Post'
-import RanPic from './myprofile.png'
+import RanPic from '../res/myprofile.png'
 import posts from '../data/db.json'
-import HillelPic from './hilel.png'
-import YuliPic from './yuli.png'
+import HillelPic from '../res/hilel.png'
+import YuliPic from '../res/yuli.png'
 
 function FeedPage(){
 	let profilePics ={
@@ -26,18 +24,8 @@ function FeedPage(){
 		<html>
 		<head><title>FakeBook</title></head>
 		<body>
-		<div className = "navbar">
-			<div className="left_col">
-					<Button id= {"logo"} icon = {fbLogo}></Button>
-					<SearchTab id = {"search_icon"}></SearchTab>
-			</div>
-			<div className="center_col">
-			<Button id ={"logo"} icon={redButton} meme = {"yes"}></Button>
-			</div>
-			</div>
-			<div className="left_col">
-	
-			</div>
+			<NavBar logo={fbLogo}/>
+			<div className='posts_col'>
 			{
 			posts.map((post)=>
 			<Post
@@ -45,7 +33,9 @@ function FeedPage(){
 			icon={profilePics[post.icon]['pic']}
 			content={post.content}
 			></Post>
-			)}
+			)}	
+			</div>
+
 		</body>			
 		</html>
 	);

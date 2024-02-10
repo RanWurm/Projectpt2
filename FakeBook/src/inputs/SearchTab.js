@@ -1,11 +1,11 @@
-import './SearchTab.css'
-function SearchTab({id}){
+
+function SearchTab({id,type="text",holder = "search in FakeBook"}){
 	return(   
 		<div>
 		<input
 		  className = {id}
-		  type="text"
-		  placeholder="search in FakeBook"
+		  type={type}
+		  placeholder= {holder}
 		 
 		/>
 	  </div>)

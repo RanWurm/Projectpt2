@@ -1,0 +1,99 @@
+.post {
+	border: 1px solid #ccc;
+	margin: 20px auto; /* Center the post horizontally */
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 350px; /* Limit the width of the post */
+	background-color: #fff; /* Set a background color */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  .post-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+  }
+  
+  .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%; /* changed from 20% to 50% */
+	margin-right: 10px;
+  }
+  
+  .author-name {
+	font-weight: bold;
+  }
+  
+  .post-content {
+	margin-bottom: 10px;
+	background-color: #f0f0f0;
+	border-radius: 8px;
+	max-width: 350px; /* Limit the width of the post */
+	padding: 10px;
+	text-align: center;
+  }
+  .post-buttons-bar{
+	display: flex;
+	width:  10vw;
+	height: 60px;
+	color:white;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	padding-top: 10px;
+	
+  }
+  
+.post_left_col{
+	flex:0.5;
+	display:flex;
+	flex-direction: row;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: 5px;
+	padding-right:20px;
+}
+  
+.post_center_col{
+	flex:0.5;
+	display:flex;
+	flex-direction: row;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-center;
+	padding:35px;
+}
+
+.post_right_col{
+	flex:0.5;
+	display:flex;
+	flex-direction: row;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	padding:20px;
+}
+  .interactions-section {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	margin-left: 50px;
+
+  }
+
+  .interactions-count {
+	font-size: 20px;
+	margin-left:50px;
+	color: #080808;
+  }
+
+  
+  .interaction-icon {
+	width: 15px; /* Adjust the size as needed */
+	height: 15px; /* Adjust the size as needed */
+	margin-right: 5px; /* Add some space between the icon and the count */
+	margin-top: 5px;
+	margin-left: 7px;
+  }
