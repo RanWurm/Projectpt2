@@ -1,6 +1,8 @@
 .comment {
 	padding-top: 10px;
 	display: flex;
+	background-color: #dbf2f1;
+	margin-bottom: 6px;
   }
   
   .comment-flex{
