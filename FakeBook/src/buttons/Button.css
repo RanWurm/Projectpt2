@@ -2,11 +2,9 @@
 .logo {
 	width: 40px;
     height: 40px;
-    margin-left: 1px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-color: #e4e4e4;
-	border: none; /* No border */
 	padding: 8px 16px; /* Padding around the button text */
 	cursor: pointer; /* Cursor on hover */
 	display: flex; /* Flexbox layout */
@@ -21,4 +19,8 @@
   
   .logo:hover {
 	background-color: #d90b0b;
+  }
+
+  button {
+	border: none; /* No border */
   }

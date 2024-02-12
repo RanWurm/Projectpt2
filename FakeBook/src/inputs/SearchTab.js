@@ -5,7 +5,7 @@ function SearchTab({id}){
 		<input
 		  className = {id}
 		  type="text"
-		  placeholder="search in FakeBook"
+		  placeholder="Search in FakeBook"
 		 
 		/>
 	  </div>)
