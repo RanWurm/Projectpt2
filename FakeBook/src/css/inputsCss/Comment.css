@@ -1,0 +1,42 @@
+.comment {
+	padding-top: 10px;
+	display: flex;
+	background-color: #dbf2f1;
+	margin-bottom: 6px;
+  }
+  
+  .comment-flex{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	margin-left: 10px;
+  }
+
+.input-box{
+	height: 90px;
+	width: 280px; 
+	
+}
+.comment-flex-button{
+	margin-top: 70px;
+	margin-left: 10px;
+	
+  }
+  .comment-avatar {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	margin-right: 10px;
+  }
+  
+  .comment-text {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .comment-author {
+	font-weight: bold;
+	color: #000;
+  }
+  
+ 
