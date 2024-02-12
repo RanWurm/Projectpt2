@@ -23,7 +23,7 @@
 	flex-direction: row;
 	flex-direction: row;
 	align-items: center;
-	justify-content:end
+	justify-content:flex-end
 }
 .center_col{
 	flex:0.5;

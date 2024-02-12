@@ -1,14 +1,20 @@
 import FeedPage from '../pages/FeedPage';
-import {Browser as Router} from 'react-router-dom';
-
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
+import LoginPage from '../pages/LoginPage';
+import RegisterPage from '../pages/RegisterPage';
 function App() {
   return (
-    
-    <div>
+    <Router>
+      <div>
       <header><title></title></header>
-      <FeedPage></FeedPage>
-  
-    </div>
+      <Routes>
+        <Route path ="/" element = {<LoginPage/>}/>
+        <Route path ="/feed" element = {<FeedPage/>}/>
+        <Route path ="/register" element = {<RegisterPage/>}/>
+      </Routes>
+      </div>
+    </Router>
+
   );
 }
 
