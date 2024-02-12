@@ -11,7 +11,7 @@ import CommentSection from './CommentSection';
 import Send from '../res/send_button.png'
 
 
-function Post  ({ author, icon, content, postId }) {
+function Post  ({ author, icon, content }) {
   const [likeCount, setLikeCount] = useState(0);
   const [inputText, setInputText] = useState('');
   const [textList, setTextList] = useState([]);

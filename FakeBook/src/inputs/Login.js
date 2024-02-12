@@ -16,8 +16,6 @@ function Login() {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Username:', username);
-    console.log('Password:', password);
     handleValid();
     setUsername('');
     setPassword('');
