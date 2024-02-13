@@ -6,6 +6,7 @@
 	max-width: 350px; /* Limit the width of the post */
 	background-color: #fff; /* Set a background color */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+	
   }
   
   .post-header {
@@ -30,7 +31,7 @@
 	background-color: #f0f0f0;
 	border-radius: 8px;
 	max-width: 350px; /* Limit the width of the post */
-	padding: 10px;
+	padding: 30px;
 	text-align: center;
   }
   .post-buttons-bar{
@@ -110,7 +111,7 @@
 }
 
 .comment .content {
-    margin-top: 5px;
+    margin-top: 50px;
 }
 .input-box{
 	height: 90px;
@@ -140,10 +141,11 @@
     transition: background-color 0.3s ease;
 }
 .comment-section {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	background-color: #ffffff;
 	border-radius: 8px;
-	max-width: 350px; /* Limit the width of the post */
+	width:300px;
+	max-width: 300px; /* Limit the width of the post */
 	padding: 10px;
 	text-align: center;
   }
