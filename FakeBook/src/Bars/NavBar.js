@@ -6,7 +6,7 @@ export default function NavBar({logo}) {
   return (
 	<div className = "navbar">
 	<div className="left_col">
-			<img className = "fb_icon " src = {logo}/>
+			<img className = "fb_icon " src = {logo} alt = 'Facebook Logo'/>
 			<SearchTab id = {"tab"}></SearchTab>
 	</div>
 	</div>
