@@ -9,7 +9,7 @@
   margin-left: 20px;
   width: 250px; 
   height: 30px;
-  cursor: pointer; 
+  cursor: text; 
   border: var(--border-darkness, 1px) solid  #f0f2f5; 
 }
 
