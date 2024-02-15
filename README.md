@@ -16,7 +16,9 @@ It should show you 7 tests that have passed.
 ### Running the app
 #### Initiation
 Now you're ready to run the app. In the terminal, type the following:
->npm start
+```
+npm start
+```
 
 The app should now be open on your Microsoft Edge browser.
 
