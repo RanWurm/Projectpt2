@@ -1,4 +1,4 @@
-# Projectpt2
+# Project - Part2
 ## Advance programing project part 2
 ## Dependencies
 In the terminal, make sure you're in the project's directory. When you are, type into the teminal the following, to install the node modules:
