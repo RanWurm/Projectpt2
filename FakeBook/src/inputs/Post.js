@@ -9,13 +9,16 @@ import Button from '../buttons/Button';
 import redButton from '../res/redButton.png'
 import CommentSection from './CommentSection';
 import Send from '../res/send_button.png'
+import DeleteButton from '../buttons/DeleteButton';
+import EditButton from '../buttons/EditButton';
 
-
-function Post  ({ author, icon, content }) {
+function Post  ({postID, author, icon, content,comments,handleDelete, handleEdit,handleGetPost}) {
   const [likeCount, setLikeCount] = useState(0);
   const [inputText, setInputText] = useState('');
   const [textList, setTextList] = useState([]);
   const [showPosts,setShowPosts] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedContent, setEditedContent] = useState(content);
   
   const handleShowpost = () =>{
     setShowPosts(!showPosts);
@@ -34,16 +37,33 @@ function Post  ({ author, icon, content }) {
   const handleAddToList = () => {
     // Check if inputText is not empty
     if (inputText.trim() !== '') {
+      let commentList = {
+        
+      }
       // Add inputText to the list
       setTextList([...textList, inputText]);
       // Clear the inputText
       setInputText('');
     }
   };
+  const handleDeleteClick = () => {
+    handleDelete(postID); // Call the handleDelete function with the post ID
+};
+const handleEditClick = () => {
+  handleGetPost(postID)
+  setIsEditing(true);
+};
+const handleSaveEdit = () => {
+  // Perform the save action or update the post content
+  setIsEditing(false);
+  handleEdit(postID,editedContent);
+};
+
 
 
   return ( 
-    <div className="post">
+    <div key = {postID} className="post">
+     
       <div className="post-header">
         <img
           className="avatar"
@@ -51,9 +71,29 @@ function Post  ({ author, icon, content }) {
           alt={`${author}'s avatar`}
         />
         <div className="author-name">{author}</div>
-        
+        <div className ='post-buttons-bar'>
+          <div className='post_right_col'>
+            <div className='delete_post_button'>
+            {isEditing ? (< EditButton handleClick={handleSaveEdit}>Save</EditButton>):(
+              <EditButton handleClick={handleEditClick}></EditButton>
+           )}
+            <DeleteButton handleClick = {handleDeleteClick} />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="post-content">{content}  </div>
+      <div className="post-content">
+        {isEditing ?(
+                    <input
+                    type="text"
+                    value={editedContent}
+                    onChange={(e) => setEditedContent(e.target.value)}
+                  />
+          
+        ): (<p>{editedContent}</p>)}
+        
+        
+          </div>
       <span className="interactions-count">
         <span className='right_col'>
          {likeCount}

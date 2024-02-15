@@ -1,9 +1,7 @@
 import React from 'react';
 import '../css/inputsCss/Comment.css';
 
-
-
-const Comment = ({commentList,issShow }) => {
+const Comment = ({commentId,commentList,issShow }) => {
   if (commentList===0 || issShow === false){
     return(<div></div>);
   }

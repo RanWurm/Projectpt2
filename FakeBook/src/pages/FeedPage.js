@@ -6,10 +6,33 @@ import RanPic from '../res/myprofile.png';
 import posts from '../data/db.json';
 import HillelPic from '../res/hilel.png';
 import YuliPic from '../res/yuli.png';
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import PageNavigator from "./PageNavigator";
 
-function FeedPage() {
+function FeedPage({isApproveToBorwse, onApproveToBrowse,premissionRef}) {
     const [inputText, setInputText] = useState('');
+    const [logOut, setLogOut] = useState(false);
+    const [IsDarkMode, setIsDarkMode] = useState(false);
+    const [clickedPostId, setClickedPostId] = useState(null);
+    const [editedPostText, setEditedPostText] = useState(null);
+    const [removedPostId, setRemovePostId] = useState(null);
+    const [tposts, setPosts] = useState(posts);
+    
+    useEffect(()=>{
+        if(logOut){
+            onApproveToBrowse(false);
+            premissionRef.current = false;
+            return
+        }
+      });
+      
+
+
+    if(!isApproveToBorwse){
+        console.log("feed page line 16");
+        return (<PageNavigator caller={"FeedPage"}/>)
+    }
+    console.log("feed Page Line 19")
 
     let profilePics = {
         'Ran': {
@@ -23,14 +46,18 @@ function FeedPage() {
         },
     };
 
+    const handleClickPost = (id) =>{
+        setClickedPostId(id);
+    }
     const handleNewPost = () => {
         if (inputText.trim() !== '') {
-            let post = {
-                "author": "Ranel",
-                "icon": "Ran",
-                "content": inputText
+            const newPost = {
+                postId: Date.now(), // Assuming postId is a unique identifier
+                author: "Ranel",
+                icon: "Ran",
+                content: inputText
             };
-            posts.push(post);
+            setPosts([newPost, ...tposts]); // Add new post to the beginning of the array
             setInputText('');
         }
     };
@@ -40,17 +67,46 @@ function FeedPage() {
         handleNewPost(); // Call handleNewPost to add the new post
     };
 
+    const handleLogOut = () => {
+        setLogOut(true);
+    };
+
+    const handleRemovePost = (id) => {
+        setRemovePostId(id);
+        setPosts(prevPosts => prevPosts.filter(post => post.postId !== id));
+    };
+
+    const handlePostEdit = (id, text) => {
+        setClickedPostId(id);
+        setEditedPostText(text);
+        const updatedPosts = tposts.map(post =>
+            post.postId === id ? { ...post, content: text } : post
+        );
+        setPosts(updatedPosts);
+        setClickedPostId(null);
+        setEditedPostText(null);
+    };
+
+    const handleDarkMode = () => {
+        setIsDarkMode(!IsDarkMode);
+    };
+
     return (
         <div>
-            <NavBar logo={fbLogo}/>
+            <NavBar logo={fbLogo} firstHandleClick={handleLogOut} />
             <div className="float-parent-element">
                 <div className="float-child-element">
                     <div className="left">
-                        {posts.map((post) => (
+                        {tposts.map((post) => (
                             <Post
+                                key={post.postId}
+                                postID={post.postId}
                                 author={post.author}
                                 icon={profilePics[post.icon]['pic']}
                                 content={post.content}
+                                handleDelete={handleRemovePost}
+                                handleEdit={handlePostEdit}
+                                handleGetPost={handleClickPost}
                             />
                         ))}
                     </div>
@@ -61,7 +117,7 @@ function FeedPage() {
                             <h2 className="post_head">Write New FakePost</h2>
                             <form onSubmit={handleSubmit}>
                                 <input
-								 	className="new-post-input"
+                                    className="new-post-input"
                                     type="text"
                                     value={inputText}
                                     onChange={(e) => setInputText(e.target.value)}
@@ -69,8 +125,7 @@ function FeedPage() {
                                     required
                                 />
                             </form>
-                            <button class = "new-post-button"
-							onClick={handleNewPost}>add comment</button>
+                            <button className="new-post-button" onClick={handleNewPost}>add comment</button>
                         </div>
                     </div>
                 </div>

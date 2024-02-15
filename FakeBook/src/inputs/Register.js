@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../css/inputsCss/Register.css'; // Import the CSS file
-import {Navigate} from "react-router-dom"
+import PageNavigator from '../pages/PageNavigator';
 
 function Register() {
   const [username, setUsername] = useState('');
@@ -10,9 +10,10 @@ function Register() {
   const	[isValid,	setIsValid] =	useState(true);
   const [usersList,addUserToList] = useState([]);
   const [userImage,setUserImage] = useState(null);
-  const [succsefulReg,setSuccsefulReg] = useState(false);
-
-  
+  const [approveRegister,setApproveRegister] = useState(false);
+  let errors = ["User Name Invalid","PassWords must match","Password must contain atleas 6 latters","Nick Name Invalid",
+                "Image Required!"]
+  const   [reasonForFail,setReasonForFail] = useState(null);
   const handleRegister = ()=>{
 	const user = {
 		"userName": {username},
@@ -24,13 +25,24 @@ function Register() {
   }
   
   const handleConfirm = () => {
-    if (username === '' || password === '' || confirmedPassword === '' 
-    || userImage === null || nickName === ''|| password !== confirmedPassword) {
-	  setIsValid(false)
-    setSuccsefulReg(false);
+    if (username === ''){
+      setReasonForFail(errors[0]);
+      setIsValid(false)
+    } else if(password !== confirmedPassword){
+      setReasonForFail(errors[1]);
+      setIsValid(false)
+    }else if( password.length <= 5 ){
+      setReasonForFail(errors[2]);
+      setIsValid(false)
+    }else if (nickName === ''){
+      setReasonForFail(errors[3]);
+      setIsValid(false)
+    } else if(userImage === null){
+      setReasonForFail(errors[4]);
+      setIsValid(false)
     } else {
 	  setIsValid(true)
-    setSuccsefulReg(true);
+    setApproveRegister(true);
 	  handleRegister();
     }
   };
@@ -45,16 +57,14 @@ function Register() {
     setUserImage(null);
   };
   
-  if(succsefulReg){
-        return <Navigate to='/feed'/>
-  }
 
   return (
     <div className="login-container"> 
       <h2 className>Register</h2>
 	  {!isValid&&(
-			<h4 className='wrong_input'>wrong inputs</h4>
+			<h4 className='wrong_input'>{reasonForFail}</h4>
 		)}
+    {approveRegister && (<h4 className='wrong_input'>Registration Completed! </h4>)}
       <form onSubmit={handleSubmit}>
         <div className="form-group"> 
           <label htmlFor="username">Username:</label>
@@ -108,7 +118,7 @@ function Register() {
         </div>
         <button className='button' type="submit">register</button>
       </form>
-      <div>{String(isValid)}</div>
+      
     </div>
   );
 }
