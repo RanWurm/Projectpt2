@@ -1,17 +1,21 @@
 # Projectpt2
 ## Advance programing project part 2
 ### Dependencies
-* In the terminal, make sure you're in the project's directory. When you are, type into the teminal the following, to install the node modules:
->npm install
+In the terminal, make sure you're in the project's directory. When you are, type into the teminal the following, to install the node modules:
+```
+npm install
+```
 
 ### Tests
 To run our tests, type into the terminal:
->npm test
+```
+npm test
+```
 
 It should show you 7 tests that have passed.
 ### Running the app
 #### Initiation
-* Now you're ready to run the app. In the terminal, type the following:
+Now you're ready to run the app. In the terminal, type the following:
 >npm start
 
 The app should now be open on your Microsoft Edge browser.
