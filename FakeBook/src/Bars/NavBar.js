@@ -8,9 +8,13 @@ export default function NavBar({logo,firstHandleClick}) {
 	<div className="left_col">
 			<img className = "fb_icon " src = {logo}/>
 			<SearchTab id = {"tab"}></SearchTab>
-			<button className='button' onClick={firstHandleClick}>log-out</button>
-			<button className='button' >dark-mode</button>
+			
 	</div>
+		<div className='right_col'>
+				<button className='button' >dark-mode</button>	
+				<button className='button' onClick={firstHandleClick}>log-out</button>	
+		</div>
+		
 	</div>
   );
 }

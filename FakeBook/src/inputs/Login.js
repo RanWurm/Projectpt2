@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../css/inputsCss/Login.css'; // Import the CSS file
-import {Navigate} from "react-router-dom"
 import { useRef,useEffect } from 'react';
 import PageNavigator from '../pages/PageNavigator';
 function Login({upDateApproval,premissionRef}) {
@@ -22,10 +21,6 @@ function Login({upDateApproval,premissionRef}) {
       
     }
   });
-  
-   
- 
- 
  
   const handleValid = () =>{
     if (username !== '' && password !==''){
@@ -79,7 +74,7 @@ function Login({upDateApproval,premissionRef}) {
             required
           />
         </div>
-        <button className = "button"type="submit" onClick={handleLogin}>Login</button>
+        <button className = "login_button"type="submit" onClick={handleLogin}>Login</button>
       </form>
       <button className='register_button'onClick={handregister}>Create Fakount</button>
       

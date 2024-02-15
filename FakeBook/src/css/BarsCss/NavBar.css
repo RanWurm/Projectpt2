@@ -41,6 +41,9 @@
 	padding-right: 10px;
 	cursor: pointer;	
 }
-.button_icon{
-	
+
+.button{
+	margin-right: 20px;
+	max-width: 100px;
+	border-radius: 15px;
 }

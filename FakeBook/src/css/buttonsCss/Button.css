@@ -4,7 +4,7 @@
     width: 20px;
     height: 20px;
     background-color: rgb(255, 255, 255);
-    border: 100px;
+    border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -19,4 +19,8 @@
 .send_button{
     height: 15px;
     width: 30px;
+}
+
+.button-image{
+    border:none;
 }

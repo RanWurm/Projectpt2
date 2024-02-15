@@ -1,27 +1,34 @@
 .float-parent-element {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .float-child-element {
-    float: left;
-    width: 50%;
+    width: 48%; /* Adjusted width for better spacing */
+    margin-bottom: 20px; /* Added margin for better separation */
+}
+
+.left {
+    padding-right: 10px; /* Added padding for better spacing */
 }
 
 .right {
-    width: 50%;
-	padding-top:20%;
-    margin-left: 2%;
+    padding-left: 10px; /* Added padding for better spacing */
 }
 
 .new_post_box {
-    width: 100%;
-    height: 200px;
-    background-color: #b6cdfcac;
-    padding: 0 15px; /* Adjust padding for inner content */
+    background-color: #f0f2f5; /* Changed background color for better contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
 }
 
 .post_head {
-    padding-left: 15px; /* Adjust padding for inner content */
+    margin-bottom: 15px; /* Added margin for better spacing */
+    font-size: 20px; /* Increased font size for better readability */
+    color: #333; /* Adjusted color for better contrast */
 }
 
 .new-post-input {
@@ -30,20 +37,44 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
-	font-weight: bold;
     line-height: 1.5;
     resize: vertical;
     box-sizing: border-box;
-	margin-top:15%;
-    margin-bottom: 5%;
+    margin-bottom: 15px;
     outline: none;
 }
 
 .new-post-input:focus {
-    background-color: #eef1f7;
-    border-color: #4267b2;
+    border-color: #4267b2; /* Changed border color for better focus indication */
 }
 
-.new-post-button{
-	margin-left: 35%;
+.new-post-button {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4267b2;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-post-button:hover {
+    background-color: #3a5a9a; /* Darker shade for hover effect */
+}
+/* FeedPage.css */
+
+.app-container.light-mode {
+    /* Define styles for light theme */
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.app-container.dark-mode {
+    /* Define styles for dark theme */
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
