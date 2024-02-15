@@ -5,7 +5,6 @@ import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
 
 function App() {
-  let users = useRef([]);
 	const [approvToBrowse,setApproveToBrowse] = useState(false);
 	let premissionToFeed = useRef(approvToBrowse);
 
