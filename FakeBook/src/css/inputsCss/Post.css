@@ -8,6 +8,11 @@
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); 
 }
 
+.dark-mode .post {
+    background-color: #333;
+    color: #fff;
+}
+
 .post-header {
     display: flex;
     align-items: center;
@@ -23,16 +28,33 @@
 
 .author-name {
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-mode .author-name{
+    color:rgba(237, 193, 135, 0.773);
 }
 
 .post-content {
     margin-bottom: 10px;
     background-color: #f0f0f0;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 20px;
     text-align: center;
     max-width: 100%;
 }
+	
+.dark-mode .post-content {
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    background-color: #333;
+    border-top-color:black;
+    border-left-color: black;
+    border-bottom-color:#595959ef;
+    border-right-color:#595959ef;
+    color: #838282;
+}
+
 
 .interactions-section {
     display: flex;
@@ -45,6 +67,9 @@
     margin-left: 10px;
     color: #666;
 }
+.dark-mode .interactions-count {
+    color: #645726;
+}
 
 .interaction-icon {
     width: 15px; 
@@ -52,6 +77,8 @@
     margin-right: 5px; 
     vertical-align: middle;
 }
+
+
 
 .post-buttons-bar {
     display: flex;
@@ -79,7 +106,10 @@
     flex: 1;
     justify-content: flex-end;
     padding-right: 5px;
+    
 }
+
+
 
 .comment-section {
     margin-bottom: 5px;
@@ -90,6 +120,11 @@
     max-width: 90%; 
     padding: 10px;
     text-align: center;
+}
+
+.dark-mode .comment-section {
+    background-color: #333;
+    color: #fff;
 }
 
 .input-box {
@@ -117,19 +152,26 @@
     color: wheat;
     transition: background-color 0.3s ease;
 }
+.dark-mode .send-button{
+    background-color:#333;
+    border: none;
+}
+.dark-mode .send-button:hover{
+    background-color:#3a5a9a;
+}
 
 .comment-container {
     width: 100%;
     margin-bottom: 15px;
 }
 
-.comment {
-    background-color: #f0f2f5;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+
+
+
+.like-button:hover {
+    background-color: rgba(255, 8, 8, 0.1);
 }
 
-.comment .content {
-    margin-top: 50px;
-}
+
+

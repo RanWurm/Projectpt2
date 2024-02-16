@@ -5,7 +5,7 @@ import HomePageText from '../decoratives/HomePageText'
 import PageNavigator from './PageNavigator'
 
 
-export default function LoginPage({isApproveToBrowse,onApproveToBrowse,premissionRef}) {
+export default function LoginPage({isApproveToBrowse,onApproveToBrowse,premissionRef,users}) {
 	if(isApproveToBrowse){
 		return(
 		<PageNavigator caller={"LoginPage"}/>
@@ -18,7 +18,7 @@ export default function LoginPage({isApproveToBrowse,onApproveToBrowse,premissio
 		<HomePageText/>
 		</div>
 		<div className='left_child'>
-		<Login upDateApproval = {onApproveToBrowse} premissionRef={premissionRef}></Login>
+		<Login upDateApproval = {onApproveToBrowse} premissionRef={premissionRef} users = {users}></Login>
 		</div>
 		</div>	
   )

@@ -1,64 +1,62 @@
-
-[
-	{
-		"postId":	"1",
-		"author" : "Ranel",
-		"icon" : "Ran",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"2",
-		"author" : "Hilel",
-		"icon" : "Hilel",
-		"content" : "HELPPPPPPPPPPPPPPPPPPPPPPPPPP"
-	},
-	{
-		"postId":	"3",
-		"author" : "Yuli",
-		"icon" : "Yuli",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"4",
-		"author" : "Ranel",
-		"icon" : "Ran",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"5",
-		"author" : "Hilel",
-		"icon" : "Hilel",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"6",
-		"author" : "Ranel",
-		"icon" : "Ran",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"7",
-		"author" : "Yuli",
-		"icon" : "Yuli",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"8",
-		"author" : "Ranel",
-		"icon" : "Yuli",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"9",
-		"author" : "Ranel",
-		"icon" : "Ran",
-		"content" : "yoyoyo Wassup biaaatchs"
-	},
-	{
-		"postId":	"10",
-		"author" : "Yuli",
-		"icon" : "Yuli",
-		"content" : "yoyoyo Wassup biaaatchs"
-	}
-	
-]
+ [
+		{
+			"postId": "1",
+			"author": "Ranel",
+			"icon": "Ran",
+			"content": "Just dropped my sandwich on the floor. RIP lunch, you will be missed. 😭"
+		},
+		{
+			"postId": "2",
+			"author": "Hilel",
+			"icon": "Hilel",
+			"content": "Tried to cook dinner tonight... ended up ordering pizza. Chef level: Expert. 🍕😂"
+		},
+		{
+			"postId": "3",
+			"author": "Yuli",
+			"icon": "Yuli",
+			"content": "Just saw a spider in my room. Time to burn the house down. 🔥🕷️😱"
+		},
+		{
+			"postId": "4",
+			"author": "Ranel",
+			"icon": "Ran",
+			"content": "Accidentally liked my crush's photo from 3 years ago. Smooth move, self. 😅💔"
+		},
+		{
+			"postId": "5",
+			"author": "Hilel",
+			"icon": "Hilel",
+			"content": "Tried to take a cute selfie... ended up looking like a potato. 🥔📸😂"
+		},
+		{
+			"postId": "6",
+			"author": "Ranel",
+			"icon": "Ran",
+			"content": "Just binge-watched a whole series in one sitting. Productivity level: -100. 📺😅"
+		},
+		{
+			"postId": "7",
+			"author": "Yuli",
+			"icon": "Yuli",
+			"content": "Asked my dog who's a good boy. He walked away. I guess not me. 😒🐶😂"
+		},
+		{
+			"postId": "8",
+			"author": "Ranel",
+			"icon": "Yuli",
+			"content": "Tried to dance like nobody's watching. Everybody was watching. 😳💃🕺😂"
+		},
+		{
+			"postId": "9",
+			"author": "Ranel",
+			"icon": "Ran",
+			"content": "Went to the gym today... forgot my gym clothes. Just flexed my imagination. 💪🤔😂"
+		},
+		{
+			"postId": "10",
+			"author": "Yuli",
+			"icon": "Yuli",
+			"content": "Just spent 20 minutes looking for my phone... while talking on it. 📱🤦‍♀️😂"
+		}
+	]
