@@ -23,9 +23,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        User init = new User("yulibar", "t123123123", "Yuli Bar");
-        init.setPic("dog");
-        users.add(init);
+        User yuli = new User("yulibar", "t123123123", "Yuli Bar", "yuli");
+        users.add(yuli);
+        User ran = new User("ranworm", "t123123123", "Ran Wurmbrand", "ran");
+        users.add(ran);
+        User hillel = new User("hillelro", "t123123123", "Hillel Rosenthal", "hillel");
+        users.add(hillel);
         binding.newAccount.setOnClickListener(v -> {
             Intent i = new Intent(this, RegisterActivity.class);
             startActivity(i);
@@ -73,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static void addUser(User user) {
         users.add(user);
+    }
+
+    public static List<User> getUsers() {
+        return users;
     }
 
 }

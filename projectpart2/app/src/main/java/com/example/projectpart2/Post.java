@@ -21,6 +21,14 @@ public class Post implements Serializable {
     private String content;
     private String pic;
 
+    public List<String> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<String> comments) {
+        this.comments = comments;
+    }
+
     private String publishTime;
 
     public int getId() {

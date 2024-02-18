@@ -1,7 +1,12 @@
 package com.example.projectpart2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +32,8 @@ public class FeedActivity extends AppCompatActivity {
     private ActivityResultLauncher<Intent> editPostActivityResultLauncher;
     private ActivityResultLauncher<Intent> newPostActivityResultLauncher;
 
+    private boolean darkMode = false;
+
     public ActivityResultLauncher<Intent> getEditPostActivityResultLauncher() {
         return editPostActivityResultLauncher;
     }
@@ -45,7 +52,7 @@ public class FeedActivity extends AppCompatActivity {
         binding.imageMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(view);
+                showPopupMenu(view, FeedActivity.this);
             }
         });
 
@@ -53,12 +60,32 @@ public class FeedActivity extends AppCompatActivity {
         binding.lstPosts.setAdapter(adapter);
         binding.lstPosts.setLayoutManager(new LinearLayoutManager(this));
 
-        posts.add(new Post(currentUser, "hello world!", "cat"));
-
-        posts.add(new Post(currentUser, "Hey I'm a cat", "cat"));
+        List<User> users = MainActivity.getUsers();
+        for (int i = 0; i < 10; i++) {
+            if (i % 3 == 0) {
+                posts.add(new Post(users.get(0), "hello world!", "cat"));
+                posts.get(i).addComment("hellooooo!");
+            } else if (i % 3 == 1) {
+                posts.add(new Post(users.get(1), "hello!", "dog"));
+                posts.get(i).addComment("how are you?");
+            }
+            else {
+                posts.add(new Post(users.get(2), "what's up?", "bunnies"));
+                posts.get(i).addComment("great!");
+            }
+        }
 
         adapter.setPosts(posts);
-
+        binding.tvAuthor.setText(currentUser.getDisplayName());
+        Drawable authorImgDrawable;
+        if (PostsListAdapter.isDrawableResource(this, currentUser.getPic())) {
+            authorImgDrawable = PostsListAdapter.getDrawableFromStringName(this, currentUser.getPic());
+        }
+        else {
+            Bitmap bitmap1 = PostsListAdapter.getBitmapFromFilePath(currentUser.getPic());
+            authorImgDrawable = PostsListAdapter.getDrawableFromBitmap(this, bitmap1);
+        }
+        binding.authorImage.setImageDrawable(authorImgDrawable);
         binding.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +93,14 @@ public class FeedActivity extends AppCompatActivity {
                 Intent intent = new Intent(FeedActivity.this, newPostActivity.class);
                 intent.putExtra("currentUser", currentUser);
                 startNewPostActivity(intent);
+            }
+        });
+        binding.btnDarkMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                activateNightMode(FeedActivity.this, adapter);
             }
         });
 
@@ -97,17 +132,28 @@ public class FeedActivity extends AppCompatActivity {
 
     }
 
-    private void showPopupMenu(View view) {
+    private void showPopupMenu(View view, Context context) {
         PopupMenu popupMenu = new PopupMenu(FeedActivity.this, view);
         popupMenu.getMenuInflater().inflate(R.menu.menu_example, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 Toast.makeText(FeedActivity.this, menuItem.getTitle() + " clicked", Toast.LENGTH_SHORT).show();
+                int id = menuItem.getItemId();
+
+                if (id == R.id.menu_option_logout) {
+                    // User chose the "Log out" item, change to the login screen
+                    Intent intent = new Intent(context, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
                 return true;
             }
+
         });
         popupMenu.show();
+
     }
 
     public void startEditPostActivity(Intent intent) {
@@ -115,5 +161,29 @@ public class FeedActivity extends AppCompatActivity {
     }
     public void startNewPostActivity(Intent intent) {
         newPostActivityResultLauncher.launch(intent);
+    }
+    public void activateNightMode(Context context, PostsListAdapter adapter) {
+        if (darkMode) {
+            darkMode = false;
+            binding.mainLayout.setBackgroundResource(R.drawable.gradient_background);
+            binding.searchLayout.setBackgroundResource(R.drawable.search);
+            binding.tvAuthor.setTextColor(Color.BLACK);
+            binding.etSearch.setHintTextColor(Color.BLACK);
+            adapter.onThemeChanged(false);
+
+
+        } else {
+            darkMode = true;
+            binding.mainLayout.setBackgroundResource(R.drawable.gradient_background_night);
+            binding.searchLayout.setBackgroundResource(R.drawable.search_night);
+            binding.tvAuthor.setTextColor(Color.WHITE);
+            binding.etSearch.setHintTextColor(Color.WHITE);
+            adapter.onThemeChanged(true);
+
+        }
+    }
+    public static boolean isNightModeEnabled(Context context) {
+        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
 }
