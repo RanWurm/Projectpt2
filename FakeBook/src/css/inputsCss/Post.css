@@ -79,6 +79,13 @@
 }
 
 
+.post-date {
+    color: #65676b; /* Facebook's text color for dates */
+    font-size: 0.875rem; /* Adjust size as needed */
+    margin-top: 4px; /* Space from the post content */
+  }
+  
+
 
 .post-buttons-bar {
     display: flex;

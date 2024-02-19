@@ -11,7 +11,7 @@ import PageNavigator from './PageNavigator';
 function FeedPage({ isApproveToBorwse, onApproveToBrowse, premissionRef }) {
     const [inputText, setInputText] = useState('');
     const [logOut, setLogOut] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(true); // Change to true for initial dark mode
+    const [isDarkMode, setIsDarkMode] = useState(false); // Change to true for initial dark mode
     const [clickedPostId, setClickedPostId] = useState(null);
     const [editedPostText, setEditedPostText] = useState(null);
     const [removedPostId, setRemovePostId] = useState(null);
@@ -53,12 +53,14 @@ function FeedPage({ isApproveToBorwse, onApproveToBrowse, premissionRef }) {
     };
 
     const handleNewPost = () => {
+        const today = new Date();
         if (inputText.trim() !== '') {
             const newPost = {
                 postId: Date.now(),
                 author: 'Ranel',
                 icon: 'Ran',
                 content: inputText,
+                date:   today.toString()
             };
             setPosts([newPost, ...tposts]);
             setInputText('');
@@ -101,6 +103,7 @@ function FeedPage({ isApproveToBorwse, onApproveToBrowse, premissionRef }) {
                                 author={post.author}
                                 icon={profilePics[post.icon].pic}
                                 content={post.content}
+                                date = {post.date}
                                 handleDelete={handleRemovePost}
                                 handleEdit={handlePostEdit}
                                 handleGetPost={handleClickPost}

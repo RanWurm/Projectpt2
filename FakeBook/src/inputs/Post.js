@@ -4,6 +4,7 @@ import '../css/inputsCss/Post.css';
 import '../css/inputsCss/Tab.css'
 import Edit from '../res/edit.png'
 import like_icon from '../res/like.png'
+import golden_like from '../res/golden_like.png'
 import Comment from '../res/comment_icon.png'
 import comment_icon from '../res/comment_icon.png'
 import redButton from '../res/redButton.png'
@@ -14,7 +15,7 @@ import EditButton from '../buttons/EditButton';
 import TrashCan from '../res/garbage.png'
 
 
-function Post  ({ postID, author, icon, content, comments, handleDelete, handleEdit, handleGetPost, isDarkMode }) {
+function Post  ({ postID, author, icon, content, date, handleDelete, handleEdit, handleGetPost, isDarkMode }) {
     const [likeCount, setLikeCount] = useState(0);
     const [inputText, setInputText] = useState('');
     const [textList, setTextList] = useState([]);
@@ -54,6 +55,8 @@ function Post  ({ postID, author, icon, content, comments, handleDelete, handleE
         setIsEditing(false);
         handleEdit(postID, editedContent);
     };
+    
+    let like = isDarkMode ?  golden_like : like_icon
    
     return ( 
         <div key={postID} className={`post ${isDarkMode ? 'dark-mode' : ''}`}>
@@ -78,6 +81,9 @@ function Post  ({ postID, author, icon, content, comments, handleDelete, handleE
                         </div>
                     </div>
                 </div>
+                <div className="post-date">
+                {new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </div>
             </div>
             <div className="post-content">
                 {isEditing ? (
@@ -91,7 +97,7 @@ function Post  ({ postID, author, icon, content, comments, handleDelete, handleE
             <span className="interactions-count">
                 <span className='right_col'>
                     {likeCount}
-                    <img className="interaction-icon" src={like_icon} alt='' /> 
+                    <img className="interaction-icon" src={like} alt='' /> 
                     {textList.length}
                     <img className="interaction-icon" src={comment_icon} alt='' />
                 </span>
@@ -100,7 +106,7 @@ function Post  ({ postID, author, icon, content, comments, handleDelete, handleE
                 <div className='post-buttons-bar'>
                     <div className='post_left_col'>
                     <button className ="interaction-button" onClick={handleLikeClick}>
-                          <img className="interaction-button" src = {like_icon}></img>
+                          <img className="interaction-button" src = {like}></img>
                         </button>
                     </div>
                     <div className='post_center_col'>

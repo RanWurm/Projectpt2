@@ -55,8 +55,13 @@ nav.dark{
 	border-radius: 15px;
 }
 
+
 .dark-mode .button{
 	background-color:#373535;
+	color: #65676b;
+}
+.dark-mode .button:hover{
+    background-color:#3a5a9a;
 }
 
 .search-tab{
