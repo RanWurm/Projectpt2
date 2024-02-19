@@ -46,6 +46,7 @@ After syncing the project successfully, you're ready to run the application:
 
 Make sure you have an Android Emulator set up. If not, create one through the AVD Manager in Android Studio (Tools -> AVD Manager).
 Start your preferred emulator.
+
 2. Run the Application:
 
 Click on the "Run" button (represented by a green triangle) in the toolbar, or use Run -> Run 'app' from the menu.
