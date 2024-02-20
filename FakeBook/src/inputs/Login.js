@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import '../css/inputsCss/Login.css'; // Import the CSS file
-import {Navigate} from "react-router-dom"
-function Login() {
+import { useRef,useEffect } from 'react';
+import PageNavigator from '../pages/PageNavigator';
+function Login({upDateApproval,premissionRef}) {
+  console.log("Login line 7")
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [goToFeed,  setGoToFeed] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const [toReg, setToReg] = useState(false);  
-  
+  const approvToBrowse = useRef(false);
+ 
+  useEffect(()=>{
+    console.log("Login line 16")
+
+    const condition = goToFeed;
+    if(condition){
+      premissionRef.current= true;
+      upDateApproval(premissionRef.current);
+      
+    }
+  });
+ 
   const handleValid = () =>{
     if (username !== '' && password !==''){
       setIsValid(true);
@@ -22,19 +36,20 @@ function Login() {
   };
 
   const handleLogin=()=>{
-    setGoToFeed(true);
+    if(approvToBrowse.current.valueOf){
+      setGoToFeed(true);
+    }
+    
   }
   const handregister=()=>{
     setToReg(true);
   }
-  if (goToFeed && isValid){
-    return <Navigate to='/feed'/>
-  }
+ 
   if (toReg){
-    return <Navigate to='/register'/>
+    //TODO update that the user want to register
+    return <PageNavigator task = "/register"/>
   }
 
- 
   return (
     <div className="login-container"> {/* Added a class for styling */}
       <h2>Login</h2>
@@ -59,9 +74,10 @@ function Login() {
             required
           />
         </div>
-        <button className = "button"type="submit" onClick={handleLogin}>Login</button>
+        <button className = "login_button"type="submit" onClick={handleLogin}>Login</button>
       </form>
       <button className='register_button'onClick={handregister}>Create Fakount</button>
+      
     </div>
   );
 }
