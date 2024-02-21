@@ -20,8 +20,30 @@ Now you're ready to run the app. In the terminal, type the following:
 npm start
 ```
 
-The app should now be open on your Microsoft Edge browser.
+The app should now be open on your browser.
 ### Using the web app
+FakeBook website is the best fake site on the internet
+to fake-use fakebook follow these real-steps:
+
+Login Page:
+
+Access the website and go to the login page.
+Enter your username/email and password.
+Click on the "Login" button to access your account.
+Register Page:
+
+If you don't have an account, navigate to the register page.
+Fill out the registration form with required details such as username, email, password, etc.
+Ensure all fields are correctly filled out and meet any validation requirements.
+Click on the "Register" button to create your account.
+Feed Page:
+
+Once logged in, you'll be directed to the feed page.
+Here, you can see posts from other users.
+Interact with posts by liking, commenting, editing, or deleting them as per your permissions.
+Utilize the dark mode option if desired.
+To logout, click on the logout option provided.
+By following these steps, you can effectively use the Facebook-like website to engage with content, connect with others, and customize your experience.
 ##### Login Page
 If you followed our instructions you should meet our "login page".
 
