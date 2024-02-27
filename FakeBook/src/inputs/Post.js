@@ -7,12 +7,10 @@ import like_icon from '../res/like.png'
 import golden_like from '../res/golden_like.png'
 import Comment from '../res/comment_icon.png'
 import comment_icon from '../res/comment_icon.png'
-import redButton from '../res/redButton.png'
 import CommentSection from './CommentSection';
 import Send from '../res/send_button.png'
-import DeleteButton from '../buttons/DeleteButton';
-import EditButton from '../buttons/EditButton';
 import TrashCan from '../res/garbage.png'
+import '../css/buttonsCss/Button.css'
 
 
 function Post  ({ postID, author, icon, content, date, handleDelete, handleEdit, handleGetPost, isDarkMode }) {
